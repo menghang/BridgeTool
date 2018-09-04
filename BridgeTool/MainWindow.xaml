@@ -1,12 +1,371 @@
-﻿<Window x:Class="BridgeTool.MainWindow"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:BridgeTool"
-        mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+﻿<Window
+    x:Class="BridgeTool.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="clr-namespace:BridgeTool"
+    mc:Ignorable="d"
+    Title="MainWindow"
+    Height="720"
+    Width="1280">
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition
+                Width="3*" />
+            <ColumnDefinition
+                Width="*" />
+        </Grid.ColumnDefinitions>
+        <TabControl Grid.Column="0" Margin="5">
+            <TabItem Header="bridge">
+                <UniformGrid
+                    Rows="1"
+                    Columns="3">
+                    <StackPanel>
+                        <GroupBox
+                            Header="bridge"
+                            Margin="5">
+                            <StackPanel>
+                                <Button
+                                    Height="27"
+                                    Content="search bridge"
+                                    Margin="5" />
+                                <DockPanel
+                                    Margin="5">
+                                    <Label
+                                        Content="ip:"
+                                        VerticalContentAlignment="Center" />
+                                    <TextBox
+                                        Height="27"
+                                        VerticalContentAlignment="Center" />
+                                </DockPanel>
+                                <Separator />
+                                <Button
+                                    Height="27"
+                                    Content="check bridge"
+                                    Margin="5" />
+                                <DockPanel
+                                    Margin="5">
+                                    <Label
+                                        Content="bridgeid:"
+                                        VerticalContentAlignment="Center" />
+                                    <TextBox
+                                        Height="27"
+                                        VerticalContentAlignment="Center" />
+                                </DockPanel>
+                                <DockPanel
+                                    Margin="5">
+                                    <Label
+                                        Content="modelid:"
+                                        VerticalContentAlignment="Center" />
+                                    <TextBox
+                                        Height="27"
+                                        VerticalContentAlignment="Center" />
+                                </DockPanel>
+                                <DockPanel
+                                    Margin="5">
+                                    <Label
+                                        Content="swversion:"
+                                        VerticalContentAlignment="Center" />
+                                    <TextBox
+                                        Height="27"
+                                        VerticalContentAlignment="Center" />
+                                </DockPanel>
+                                <DockPanel
+                                    Margin="5">
+                                    <Label
+                                        Content="apiversion:"
+                                        VerticalContentAlignment="Center" />
+                                    <TextBox
+                                        Height="27"
+                                        VerticalContentAlignment="Center" />
+                                </DockPanel>
+                                <Separator />
+                                <DockPanel
+                                    Margin="5">
+                                    <Label
+                                        Content="username:"
+                                        VerticalContentAlignment="Center" />
+                                    <TextBox
+                                        Height="27"
+                                        VerticalContentAlignment="Center" />
+                                </DockPanel>
+                                <Button
+                                    Height="27"
+                                    Content="get new username"
+                                    Margin="5" />
+                            </StackPanel>
+                        </GroupBox>
+                    </StackPanel>
+                </UniformGrid>
+            </TabItem>
+            <TabItem
+                Header="lights">
+                
+                <UniformGrid
+                    Rows="1"
+                    Columns="3">
+                    <StackPanel>
+                        <GroupBox
+                            Header="lights">
+                            <StackPanel>
+                                <Button
+                                    Content="Get all lights"
+                                    Height="27"
+                                    Margin="5" />
+                                <DockPanel
+                                    Margin="5">
+                                    <Label
+                                        Content="lamp:"
+                                        Height="27"
+                                        VerticalContentAlignment="Center" />
+                                    <ComboBox
+                                        Height="27"
+                                        VerticalContentAlignment="Center" />
+                                </DockPanel>
+                                <Separator />
+                                <Button
+                                    Content="Get light attributes and state"
+                                    Height="27"
+                                    Margin="5" />
+                                <DockPanel
+                                    Margin="5">
+                                    <Label
+                                        Content="type:"
+                                        VerticalContentAlignment="Center" />
+                                    <TextBox
+                                        Height="27"
+                                        VerticalContentAlignment="Center" />
+                                </DockPanel>
+                                <DockPanel
+                                    Margin="5">
+                                    <Label
+                                        Content="modelid:"
+                                        VerticalContentAlignment="Center" />
+                                    <TextBox
+                                        Height="27"
+                                        VerticalContentAlignment="Center" />
+                                </DockPanel>
+                                <DockPanel
+                                    Margin="5">
+                                    <Label
+                                        Content="uniqueid:"
+                                        VerticalContentAlignment="Center" />
+                                    <TextBox
+                                        Height="27"
+                                        VerticalContentAlignment="Center" />
+                                </DockPanel>
+                                <DockPanel
+                                    Margin="5">
+                                    <Label
+                                        Content="on:"
+                                        VerticalContentAlignment="Center" />
+                                    <TextBox
+                                        Height="27"
+                                        VerticalContentAlignment="Center" />
+                                </DockPanel>
+                                <DockPanel
+                                    Margin="5">
+                                    <Label
+                                        Content="bri:"
+                                        VerticalContentAlignment="Center" />
+                                    <TextBox
+                                        Height="27"
+                                        VerticalContentAlignment="Center" />
+                                </DockPanel>
+                                <DockPanel
+                                    Margin="5">
+                                    <Label
+                                        Content="hue:"
+                                        VerticalContentAlignment="Center" />
+                                    <TextBox
+                                        Height="27"
+                                        VerticalContentAlignment="Center" />
+                                </DockPanel>
+                                <DockPanel
+                                    Margin="5">
+                                    <Label
+                                        Content="sat:"
+                                        VerticalContentAlignment="Center" />
+                                    <TextBox
+                                        Height="27"
+                                        VerticalContentAlignment="Center" />
+                                </DockPanel>
+                                <DockPanel
+                                    Margin="5">
+                                    <Label
+                                        Content="xy:"
+                                        VerticalContentAlignment="Center" />
+                                    <UniformGrid
+                                        Rows="1"
+                                        Columns="2">
+                                        <TextBox
+                                            Height="27"
+                                            VerticalContentAlignment="Center"
+                                            Margin="0,0,2.5,0" />
+                                        <TextBox
+                                            Height="27"
+                                            VerticalContentAlignment="Center"
+                                            Margin="2.5,0,0,0" />
+                                    </UniformGrid>
+                                </DockPanel>
+                                <DockPanel
+                                    Margin="5">
+                                    <Label
+                                        Content="ct:"
+                                        VerticalContentAlignment="Center" />
+                                    <TextBox
+                                        Height="27"
+                                        VerticalContentAlignment="Center" />
+                                </DockPanel>
+                                <DockPanel
+                                    Margin="5">
+                                    <Label
+                                        Content="alert:"
+                                        VerticalContentAlignment="Center" />
+                                    <TextBox
+                                        Height="27"
+                                        VerticalContentAlignment="Center" />
+                                </DockPanel>
+                                <DockPanel
+                                    Margin="5">
+                                    <Label
+                                        Content="effect:"
+                                        VerticalContentAlignment="Center" />
+                                    <TextBox
+                                        Height="27"
+                                        VerticalContentAlignment="Center" />
+                                </DockPanel>
+                                <DockPanel
+                                    Margin="5">
+                                    <Label
+                                        Content="colormode:"
+                                        VerticalContentAlignment="Center" />
+                                    <TextBox
+                                        Height="27"
+                                        VerticalContentAlignment="Center" />
+                                </DockPanel>
+                                <DockPanel
+                                    Margin="5">
+                                    <Label
+                                        Content="reachable:"
+                                        VerticalContentAlignment="Center" />
+                                    <TextBox
+                                        Height="27"
+                                        VerticalContentAlignment="Center" />
+                                </DockPanel>
+                                <Button
+                                    Content="Delete lights"
+                                    Height="27"
+                                    Margin="5" />
+                            </StackPanel>
+                        </GroupBox>
+                    </StackPanel>
+                    <StackPanel>
+                        <GroupBox
+                            Header="lights">
+                            <StackPanel>
+                                <DockPanel
+                                    Margin="5">
+                                    <Label
+                                        Content="on:"
+                                        VerticalContentAlignment="Center" />
+                                    <TextBox
+                                        Height="27"
+                                        VerticalContentAlignment="Center" />
+                                </DockPanel>
+                                <DockPanel
+                                    Margin="5">
+                                    <Label
+                                        Content="bri:"
+                                        VerticalContentAlignment="Center" />
+                                    <TextBox
+                                        Height="27"
+                                        VerticalContentAlignment="Center" />
+                                </DockPanel>
+                                <DockPanel
+                                    Margin="5">
+                                    <Label
+                                        Content="hue:"
+                                        VerticalContentAlignment="Center" />
+                                    <TextBox
+                                        Height="27"
+                                        VerticalContentAlignment="Center" />
+                                </DockPanel>
+                                <DockPanel
+                                    Margin="5">
+                                    <Label
+                                        Content="sat:"
+                                        VerticalContentAlignment="Center" />
+                                    <TextBox
+                                        Height="27"
+                                        VerticalContentAlignment="Center" />
+                                </DockPanel>
+                                <DockPanel
+                                    Margin="5">
+                                    <Label
+                                        Content="xy:"
+                                        VerticalContentAlignment="Center" />
+                                    <TextBox
+                                        Height="27"
+                                        VerticalContentAlignment="Center" />
+                                </DockPanel>
+                                <DockPanel
+                                    Margin="5">
+                                    <Label
+                                        Content="ct:"
+                                        VerticalContentAlignment="Center" />
+                                    <TextBox
+                                        Height="27"
+                                        VerticalContentAlignment="Center" />
+                                </DockPanel>
+                                <DockPanel
+                                    Margin="5">
+                                    <Label
+                                        Content="alert:"
+                                        VerticalContentAlignment="Center" />
+                                    <TextBox
+                                        Height="27"
+                                        VerticalContentAlignment="Center" />
+                                </DockPanel>
+                                <DockPanel
+                                    Margin="5">
+                                    <Label
+                                        Content="effect:"
+                                        VerticalContentAlignment="Center" />
+                                    <TextBox
+                                        Height="27"
+                                        VerticalContentAlignment="Center" />
+                                </DockPanel>
+                                <DockPanel
+                                    Margin="5">
+                                    <Label
+                                        Content="transitiontime:"
+                                        VerticalContentAlignment="Center" />
+                                    <TextBox
+                                        Height="27"
+                                        VerticalContentAlignment="Center" />
+                                </DockPanel>
+                                <Button
+                                    Content="Set light state"
+                                    Height="27"
+                                    Margin="5" />
+                            </StackPanel>
+                        </GroupBox>
+                    </StackPanel>
+                </UniformGrid>
+            </TabItem>
+        </TabControl>
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition
+                    Height="4*" />
+                <RowDefinition
+                    Height="*" />
+            </Grid.RowDefinitions>
+            <RichTextBox Grid.Row="0" Margin="5"/>
+            <RichTextBox
+                Grid.Row="1" Margin="5"/>
+        </Grid>
     </Grid>
 </Window>
